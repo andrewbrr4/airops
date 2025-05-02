@@ -21,13 +21,14 @@ These integration actions are essentially workflow steps that execute a lightwei
 # Your Task
 We are testing an agent whose purpose is to receive a workflow output object and a natural language user request, and create a integration step that satisfies the user's requirements.
 You are going to be generating the test cases to evaluate this agent's performance.
-To that end, given the supplied workflow outputs and available integration actions, please generate a hypothetical user request that should trigger the agent to pick and configure a specific workflow. 
+To that end, given the supplied workflow outputs and available integration actions, please generate a list of hypothetical user requests that should trigger the agent to pick and configure a specific workflow. 
 Please also include in your response the expected integration action that the agent should select, as well as the desired input payload.
+Try to select a range of different desired integration actions, so we can test how the agent performs across multiple different use cases.
 
 {format_instructions}
 
 To learn more information about the integration actions, including what they do, what fields they require and what these fields mean, please use the provided tools.
-However, try to use these tools ONLY as-needed, to avoid stressing the context window.
+It is ESSENTIAL that the input schema of the integration accurately matches the requirements of the 3rd party API - use these tools to validate that.
 
 # Inputs
 Here are the outputs as described above:
@@ -39,5 +40,5 @@ Here are the outputs as described above:
 {available_integration_actions}
 
 # Begin Task
-Generate the test cases as described in the requirements above.
+Generate {num_test_cases} test cases as described in the requirements above.
 """
