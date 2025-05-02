@@ -1,5 +1,3 @@
-A JSON list of available integration actions. Each action contains its integration, name, workflow definition, and inputs schema.
-
 [
   {
     "integration": "webflow",
