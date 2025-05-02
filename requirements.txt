@@ -26,6 +26,7 @@ joblib
 pytest
 pydantic
 langchain
+langchain-core
 langchain-openai
 langfuse
 huggingface-hub
