@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 
 
 class IntegrationAction(BaseModel):
@@ -14,12 +14,20 @@ class IntegrationActionPayload(BaseModel):
     action_config: Dict[str, Any] = Field(..., description="""
         the inputs to supply the integration action.
         keys should match the inputs schema for the integration action.
-        values should be liquid values/references to workflow output steps (e.g. step_x.output.key) - NOT literal values.
+        If you are unable to populate required values using the available keys from the worklow outputs object, you must either:
+        * populate with you best guess of one of a KNOWN set of options.
+        * indicate the user must supply this field to you by returning {{user_input}}
     """)
 
 
 class TestCase(BaseModel):
-    user_request: str = Field(..., description="the synthetic user request that should trigger the integration action")
-    expected_integration_action_payload: IntegrationActionPayload = Field(..., description="""
-        the desired integration action and properly-formatted payload.
+    action_applicable: bool = Field(..., description="whether the integration action makes sense/can be configured wth the given workflow output")
+    user_request: Optional[str] = Field(None, description="the synthetic user request that should trigger the integration action")
+    action_config: Dict[str, Any] = Field(..., description="""
+        the inputs to supply the integration action.
+        keys should match the inputs schema for the integration action.
+        values should be liquid references to workflow inputs or step outputs.
+        If you are unable to populate required values using the available keys from the worklow outputs object, you must either:
+        * populate with you best guess of one of a KNOWN set of options.
+        * indicate the user must supply this field to you by returning {{user_input}}
     """)
