@@ -1,0 +1,114 @@
+{
+    "inputs": {
+      "brand_kit": 6857,
+      "target_webpage_url": "https://www.masterclass.com/classes/aaron-franklin-teaches-texas-style-bbq"
+    },
+    "step_16": {
+      "output": {
+        "title_tag": "Aaron Franklin Teaches Texas-Style BBQ",
+        "meta_descriptions": null,
+        "schema_markup": null
+      }
+    },
+    "step_2": {
+      "output": "Texas-Style BBQ"
+    },
+    "step_3": {
+      "output": [
+        "https://en.wikipedia.org/wiki/Barbecue_in_Texas",
+        "https://www.traveltexas.com/things-to-do/food-drink/the-4-bbq-styles-in-texas/"
+      ]
+    },
+    "step_8": {
+      "output": [
+        {
+          "title_tag": "Barbecue in Texas - Wikipedia",
+          "meta_description": null,
+          "schema_markup": "{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"Article\",\"name\":\"Barbecue in Texas\",\"url\":\"https:\\/\\/en.wikipedia.org\\/wiki\\/Barbecue_in_Texas\",\"sameAs\":\"http:\\/\\/www.wikidata.org\\/entity\\/Q4859543\",\"mainEntity\":\"http:\\/\\/www.wikidata.org\\/entity\\/Q4859543\",\"author\":{\"@type\":\"Organization\",\"name\":\"Contributors to Wikimedia projects\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Wikimedia Foundation, Inc.\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/www.wikimedia.org\\/static\\/images\\/wmf-hor-googpub.png\"}},\"datePublished\":\"2010-04-02T19:20:27Z\",\"dateModified\":\"2025-04-29T12:54:00Z\",\"image\":\"https:\\/\\/upload.wikimedia.org\\/wikipedia\\/commons\\/6\\/69\\/Motherhood_and_apple_pie.jpg\",\"headline\":\"Traditional regional styles of smoked barbecue unique to Texan cuisine\"}"
+        },
+        {
+          "title_tag": "Unique Texas Style BBQ | Guide to the 4 Distinct Styles",
+          "meta_description": "Discover four distinct regional styles of Texas BBQ from West to East Texas and top spots to sample some of the mouthwatering, tender meats in the area.",
+          "schema_markup": null
+        }
+      ]
+    },
+    "step_11": {
+      "output": {
+        "title_tag": "Unique Texas Style BBQ | Guide to the 4 Distinct Styles",
+        "meta_description": "Discover four distinct regional styles of Texas BBQ from West to East Texas and top spots to sample some of the mouthwatering, tender meats in the area.",
+        "schema_markup": null
+      }
+    },
+    "step_4": {
+      "output": "1. **Title Tags**:\n   - **Common Patterns**:\n     - Include the primary keyword \"Texas-Style BBQ\" or related terms.\n     - Provide context or additional descriptive phrases, such as \"Unique\" or \"Guide to\" that indicate the content's focus.\n     - Maintain a clear and straightforward structure for better readability.\n   - **Best Practices**:\n     - Start with the target keyword for SEO optimization.\n     - Use secondary keywords or phrases that enhance the title's clarity and relevance.\n     - Keep the title concise, ideally under 60 characters to avoid truncation in search results.\n\n2. **Meta Descriptions**:\n   - **Common Patterns**:\n     - Summarize the content effectively, focusing on key aspects like regional styles or unique features.\n     - Incorporate the target keyword and related terms to improve relevance.\n     - Use engaging language that entices users to click.\n   - **Best Practices**:\n     - Include the target keyword early in the description for better visibility.\n     - Keep the length around 150-160 characters to ensure the entire description is displayed in search results.\n     - Create a compelling call-to-action or highlight unique selling points to increase click-through rates.\n\n3. **Schema Markup**:\n   - **Common Patterns**:\n     - Utilize relevant schema types such as \"Article\" for content representation.\n     - Include essential details like author, date published, and publisher when applicable.\n     - Provide URLs for the content and associated entities to enhance linking.\n   - **Best Practices**:\n     - Implement appropriate schema types to provide structured data that helps search engines understand the content better.\n     - Include key metadata such as publication date, author, and relevant images to improve rich snippet potential.\n     - Ensure the schema markup is correctly formatted to comply with schema.org standards for optimal performance."
+    },
+    "step_5": {
+      "output": {
+        "recommendations": [
+          {
+            "titleTag": {
+              "current": "Aaron Franklin Teaches Texas-Style BBQ",
+              "suggested": "Texas-Style BBQ Masterclass with Aaron Franklin"
+            },
+            "reasoning": "The suggested title starts with the primary keyword 'Texas-Style BBQ' for better SEO visibility and is under 60 characters. It also adds a context by mentioning 'Masterclass' to align with the brand's identity, helping users understand the nature of the content immediately."
+          },
+          {
+            "metaDescription": {
+              "current": null,
+              "suggested": "Join Aaron Franklin for a masterclass on Texas-Style BBQ. Learn the secrets of smoking, seasoning, and cooking authentic barbecue. Enroll now!"
+            },
+            "reasoning": "This meta description effectively incorporates the primary keyword 'Texas-Style BBQ' and includes a strong call-to-action 'Enroll now!' It summarizes the content, highlighting the unique selling points while keeping it within the recommended character limit of 155-160 characters."
+          },
+          {
+            "schemaMarkup": {
+              "current": null,
+              "suggested": {
+                "@context": "https://schema.org",
+                "@type": "VideoObject",
+                "name": "Texas-Style BBQ Masterclass with Aaron Franklin",
+                "headline": "Texas-Style BBQ Masterclass with Aaron Franklin",
+                "description": "Join Aaron Franklin for a masterclass on Texas-Style BBQ. Learn the secrets of smoking, seasoning, and cooking authentic barbecue.",
+                "author": {
+                  "@type": "Person",
+                  "name": "Aaron Franklin"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "MasterClass",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.masterclass.com/cdn-cgi/image/width=3840,quality=75,format=webp/https://static.masterclass.com/maw-logo.png"
+                  }
+                },
+                "datePublished": "2024-05-01T00:00:00",
+                "dateModified": "2024-05-01T00:00:00",
+                "image": "https://www.masterclass.com/course-images/attachments/hessaRVDgssfP8VTmx9vsYm1?width=3840&quality=75&format=webp",
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": "https://www.masterclass.com/classes/aaron-franklin-teaches-texas-style-bbq"
+                },
+                "inLanguage": "en-US"
+              }
+            },
+            "reasoning": "The suggested schema markup uses the 'VideoObject' type to accurately represent the content. It includes essential details such as the author's name, a description that incorporates the primary keyword, and proper structured data to enhance search visibility and promote rich snippets in search results."
+          }
+        ]
+      }
+    },
+    "step_15": {
+      "output": "## Recommended Title Tag\n**Current:** Aaron Franklin Teaches Texas-Style BBQ\n\n**Suggested:** Texas-Style BBQ Masterclass with Aaron Franklin\n\n**Explanation for suggested title tag:** The suggested title starts with the primary keyword 'Texas-Style BBQ' for better SEO visibility and is under 60 characters. It also adds a context by mentioning 'Masterclass' to align with the brand's identity, helping users understand the nature of the content immediately.\n\n## Recommended Meta Description\n**Current:** None\n\n**Suggested:** Join Aaron Franklin for a masterclass on Texas-Style BBQ. Learn the secrets of smoking, seasoning, and cooking authentic barbecue. Enroll now!\n\n**Explanation for suggested meta description:** This meta description effectively incorporates the primary keyword 'Texas-Style BBQ' and includes a strong call-to-action 'Enroll now!' It summarizes the content, highlighting the unique selling points while keeping it within the recommended character limit of 155-160 characters.\n\n## Recommended Schema Markup\n**Current:** None\n\n**Suggested:** \n- **@context**:https://schema.org\n- **@type**: VideoObject\n- **name**: Texas-Style BBQ Masterclass with Aaron Franklin\n- **headline**: Texas-Style BBQ Masterclass with Aaron Franklin\n- **description**: Join Aaron Franklin for a masterclass on Texas-Style BBQ. Learn the secrets of smoking, seasoning, and cooking authentic barbecue.\n- **author**:\n    - **@type**:Person\n    - **name**: Aaron Franklin\n- **publisher**:\n    - **@type**: Organization\n    - **name**: MasterClass\n    - **logo**:\n        - **@type**:ImageObject\n        - **url**: https://www.masterclass.com/cdn-cgi/image/width=3840,quality=75,format=webp/https://static.masterclass.com/maw-logo.png\n- **datePublished**:2024-05-01T00:00:00\n- **dateModified**: 2024-05-01T00:00:00\n- **image**: https://www.masterclass.com/course-images/attachments/hessaRVDgssfP8VTmx9vsYm1?width=3840&quality=75&format=webp\n- **mainEntityOfPage**:\n    - **@type**:WebPage\n    - **@id**: https://www.masterclass.com/classes/aaron-franklin-teaches-texas-style-bbq\n- **inLanguage**:en-US\n\n**Explanation for suggested schema markup:** The suggested schema markup uses the 'VideoObject' type to accurately represent the content. It includes essential details such as the author's name, a description that incorporates the primary keyword, and proper structured data to enhance search visibility and promote rich snippets in search results."
+    },
+    "step_6": {
+      "output": {
+        "recommended_seo_tags": "## Recommended Title Tag\n**Current:** Aaron Franklin Teaches Texas-Style BBQ\n\n**Suggested:** Texas-Style BBQ Masterclass with Aaron Franklin\n\n**Explanation for suggested title tag:** The suggested title starts with the primary keyword 'Texas-Style BBQ' for better SEO visibility and is under 60 characters. It also adds a context by mentioning 'Masterclass' to align with the brand's identity, helping users understand the nature of the content immediately.\n\n## Recommended Meta Description\n**Current:** None\n\n**Suggested:** Join Aaron Franklin for a masterclass on Texas-Style BBQ. Learn the secrets of smoking, seasoning, and cooking authentic barbecue. Enroll now!\n\n**Explanation for suggested meta description:** This meta description effectively incorporates the primary keyword 'Texas-Style BBQ' and includes a strong call-to-action 'Enroll now!' It summarizes the content, highlighting the unique selling points while keeping it within the recommended character limit of 155-160 characters.\n\n## Recommended Schema Markup\n**Current:** None\n\n**Suggested:** \n- **@context**:https://schema.org\n- **@type**: VideoObject\n- **name**: Texas-Style BBQ Masterclass with Aaron Franklin\n- **headline**: Texas-Style BBQ Masterclass with Aaron Franklin\n- **description**: Join Aaron Franklin for a masterclass on Texas-Style BBQ. Learn the secrets of smoking, seasoning, and cooking authentic barbecue.\n- **author**:\n    - **@type**:Person\n    - **name**: Aaron Franklin\n- **publisher**:\n    - **@type**: Organization\n    - **name**: MasterClass\n    - **logo**:\n        - **@type**:ImageObject\n        - **url**: https://www.masterclass.com/cdn-cgi/image/width=3840,quality=75,format=webp/https://static.masterclass.com/maw-logo.png\n- **datePublished**:2024-05-01T00:00:00\n- **dateModified**: 2024-05-01T00:00:00\n- **image**: https://www.masterclass.com/course-images/attachments/hessaRVDgssfP8VTmx9vsYm1?width=3840&quality=75&format=webp\n- **mainEntityOfPage**:\n    - **@type**:WebPage\n    - **@id**: https://www.masterclass.com/classes/aaron-franklin-teaches-texas-style-bbq\n- **inLanguage**:en-US\n\n**Explanation for suggested schema markup:** The suggested schema markup uses the 'VideoObject' type to accurately represent the content. It includes essential details such as the author's name, a description that incorporates the primary keyword, and proper structured data to enhance search visibility and promote rich snippets in search results."
+      }
+    },
+    "step_7": {
+      "output": {
+        "title_tag": "<title>Texas-Style BBQ Masterclass with Aaron Franklin</title>",
+        "meta_description": "<meta name='description' content='Join Aaron Franklin for a masterclass on Texas-Style BBQ. Learn the secrets of smoking, seasoning, and cooking authentic barbecue. Enroll now!'>",
+        "schema_markup": "<script type='application/ld+json'>{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"VideoObject\",\n  \"name\": \"Texas-Style BBQ Masterclass with Aaron Franklin\",\n  \"headline\": \"Texas-Style BBQ Masterclass with Aaron Franklin\",\n  \"description\": \"Join Aaron Franklin for a masterclass on Texas-Style BBQ. Learn the secrets of smoking, seasoning, and cooking authentic barbecue.\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"Aaron Franklin\"\n  },\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"MasterClass\",\n    \"logo\": {\n      \"@type\": \"ImageObject\",\n      \"url\": \"https://www.masterclass.com/cdn-cgi/image/width=3840,quality=75,format=webp/https://static.masterclass.com/maw-logo.png\"\n    }\n  },\n  \"datePublished\": \"2024-05-01T00:00:00\",\n  \"dateModified\": \"2024-05-01T00:00:00\",\n  \"image\": \"https://www.masterclass.com/course-images/attachments/hessaRVDgssfP8VTmx9vsYm1?width=3840&quality=75&format=webp\",\n  \"mainEntityOfPage\": {\n    \"@type\": \"WebPage\",\n    \"@id\": \"https://www.masterclass.com/classes/aaron-franklin-teaches-texas-style-bbq\"\n  },\n  \"inLanguage\": \"en-US\"\n}</script>"
+      }
+    }
+}

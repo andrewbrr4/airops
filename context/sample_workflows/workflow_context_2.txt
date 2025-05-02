@@ -1,0 +1,162 @@
+{
+    "inputs": {
+        "brand_kit": 6857,
+        "keyword": "SEO"
+    },
+    "step_5": {
+        "output": {
+            "search_intent": "The primary motivation for searching 'SEO' is to gain a foundational understanding of search engine optimization, its principles, and how it can be applied to improve website visibility and traffic. Searchers are likely looking for educational resources, guides, or tools that can help them learn about SEO strategies, techniques, and best practices. This could include individuals seeking to enhance their own websites, marketers looking to improve their skills, or business owners wanting to understand how SEO can benefit their online presence.",
+            "content_funnel_stage": "top-of-funnel",
+            "recommended_content_type": "what-is",
+            "secondary_keywords": [
+                "SEO marketing",
+                "SEO techniques",
+                "SEO tools",
+                "SEO best practices",
+                "SEO strategies",
+                "SEO for beginners",
+                "SEO trends",
+                "SEO analytics",
+                "SEO content optimization",
+                "SEO keyword research"
+            ],
+            "top_questions": [
+                "What is SEO and how does it work?",
+                "What are the key components of SEO?",
+                "How can I improve my website's SEO?",
+                "What are common SEO mistakes to avoid?",
+                "What tools can help with SEO analysis?"
+            ]
+        },
+        "execution_id": 21546700
+    },
+    "step_11": {
+        "output": [
+            {
+                "position": 1,
+                "title": "Search Engine Optimization: A Simple Guide to SEO Strategy",
+                "link": "https://www.masterclass.com/articles/seo-strategy-guide",
+                "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.masterclass.com/articles/seo-strategy-guide&ved=2ahUKEwjkrrnXr4WNAxWzha8BHclsAFsQFnoECBwQAQ",
+                "displayed_link": "https://www.masterclass.com › articles › seo-strategy-gu...",
+                "favicon": "https://serpapi.com/searches/6815092674311826a20c197a/images/95bbc97a43d25d2ac0a356848ac694d02d574dd6b62db01d05d0ee826defa7f8.png",
+                "snippet": "Search Engine Optimization: A Simple Guide to SEO Strategy. Written by MasterClass. Last updated: Nov 2, 2021 • 4 min read. With the right SEO tools, ...",
+                "snippet_highlighted_words": [
+                    "Search Engine Optimization: A Simple Guide to SEO Strategy"
+                ],
+                "source": "MasterClass"
+            },
+            {
+                "position": 2,
+                "title": "SERPs Explained: How Search Engine Results Pages Work",
+                "link": "https://www.masterclass.com/articles/serp-explained",
+                "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.masterclass.com/articles/serp-explained&ved=2ahUKEwjkrrnXr4WNAxWzha8BHclsAFsQFnoECBoQAQ",
+                "displayed_link": "https://www.masterclass.com › articles › serp-explained",
+                "favicon": "https://serpapi.com/searches/6815092674311826a20c197a/images/95bbc97a43d25d2ac0a356848ac694d07be3fae042425ba38df2528fbde44914.png",
+                "date": "Nov 8, 2021",
+                "snippet": "Search engine optimization (best known by the acronym SEO) is the process of configuring websites so they will appear on page one of a SERP.",
+                "snippet_highlighted_words": [
+                    "Search engine optimization"
+                ],
+                "source": "MasterClass"
+            },
+            {
+                "position": 3,
+                "title": "How Masterclass.com Mastered their SEO",
+                "link": "https://hvseo.co/blog/how-masterclass-com-mastered-their-seo/",
+                "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://hvseo.co/blog/how-masterclass-com-mastered-their-seo/&ved=2ahUKEwjkrrnXr4WNAxWzha8BHclsAFsQFnoECBsQAQ",
+                "displayed_link": "https://hvseo.co › blog › how-masterclass-com-mastere...",
+                "favicon": "https://serpapi.com/searches/6815092674311826a20c197a/images/95bbc97a43d25d2ac0a356848ac694d01f302800fe2a8cb3de4c201c6f6585d3.png",
+                "date": "Feb 25, 2021",
+                "snippet": "Masterclass.com has a firm grasp of what people search for on Google and why. And this is evident with how they rank # 1 on SERPs for the term “shallots.”",
+                "snippet_highlighted_words": [
+                    "Masterclass.com"
+                ],
+                "source": "High Voltage SEO"
+            },
+        ],
+    },
+    "step_6": {
+        "output": {
+            "titles": [
+                "SEO Basics: Understanding Search Engine Optimization",
+                "What Is SEO? A Beginner's Guide to Search Engine Success",
+                "SEO Strategies: How to Boost Your Online Visibility",
+                "The Importance of SEO: Why Every Website Needs It",
+                "SEO 101: Key Concepts for Effective Online Marketing"
+            ]
+        },
+        "execution_id": 21546700
+    },
+    "step_9": {
+        "output": {
+            "title": "SEO Basics: Understanding Search Engine Optimization"
+        },
+        "execution_id": 21546700
+    },
+    "step_12": {
+        "output": {
+            "internal_links": [
+                "[seo strategy guide](https://www.masterclass.com/articles/seo-strategy-guide)",
+                "[search engine results pages](https://www.masterclass.com/articles/serp-explained)",
+                "[digital marketing strategies](https://www.masterclass.com/articles/what-is-digital-marketing)"
+            ]
+        },
+        "execution_id": 21546700
+    },
+    "step_17": {
+        "output": [
+            "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+            "https://www.seo-usa.org/",
+            "https://searchengineland.com/guide/what-is-seo",
+            "https://en.wikipedia.org/wiki/Search_engine_optimization"
+        ],
+        "execution_id": 21546700
+    },
+    "step_2": {
+        "output": "seo",
+        "execution_id": 21546700
+    },
+    "step_20": {
+        "output": "**Title:** SEO Basics: Understanding Search Engine Optimization\n\n**Secondary Keywords:** SEO marketing, SEO techniques, SEO tools, SEO best practices, SEO strategies, SEO for beginners, SEO trends, SEO analytics, SEO content optimization, SEO keyword research \n\n**Search Intent**: The primary motivation for searching 'SEO' is to gain a foundational understanding of search engine optimization, its principles, and how it can be applied to improve website visibility and traffic. Searchers are likely looking for educational resources, guides, or tools that can help them learn about SEO strategies, techniques, and best practices. This could include individuals seeking to enhance their own websites, marketers looking to improve their skills, or business owners wanting to understand how SEO can benefit their online presence.\n\n**Content Funnel Stage**: top-of-funnel\n\n**Recommended Content Type**: what-is\n\n**Top Related Questions from Google**: \n\n- What is SEO and how does it work? \n- What are the key components of SEO? \n- How can I improve my website's SEO? \n- What are common SEO mistakes to avoid? \n- What tools can help with SEO analysis? \n\n\n**Suggested Internal Links**: \n\n- [seo strategy guide](https://www.masterclass.com/articles/seo-strategy-guide) \n- [search engine results pages](https://www.masterclass.com/articles/serp-explained) \n- [digital marketing strategies](https://www.masterclass.com/articles/what-is-digital-marketing) \n\n**Suggested Sources**: \n\n- https://developers.google.com/search/docs/fundamentals/seo-starter-guide \n- https://www.seo-usa.org/ \n- https://searchengineland.com/guide/what-is-seo \n- https://en.wikipedia.org/wiki/Search_engine_optimization \n\n**Suggested Slug**: seo",
+        "execution_id": 21546700
+    },
+    "step_10": {
+        "output": {
+            "Title": "SEO Basics: Understanding Search Engine Optimization",
+            "Secondary Keywords": [
+                "SEO marketing",
+                "SEO techniques",
+                "SEO tools",
+                "SEO best practices",
+                "SEO strategies",
+                "SEO for beginners",
+                "SEO trends",
+                "SEO analytics",
+                "SEO content optimization",
+                "SEO keyword research"
+            ],
+            "Search Intent": "The primary motivation for searching 'SEO' is to gain a foundational understanding of search engine optimization, its principles, and how it can be applied to improve website visibility and traffic. Searchers are likely looking for educational resources, guides, or tools that can help them learn about SEO strategies, techniques, and best practices. This could include individuals seeking to enhance their own websites, marketers looking to improve their skills, or business owners wanting to understand how SEO can benefit their online presence.",
+            "Recommended Content Type": "what-is",
+            "Top Related Questions from Google": [
+                "What is SEO and how does it work?",
+                "What are the key components of SEO?",
+                "How can I improve my website's SEO?",
+                "What are common SEO mistakes to avoid?",
+                "What tools can help with SEO analysis?"
+            ],
+            "Suggested Internal Links": [
+                "[seo strategy guide](https://www.masterclass.com/articles/seo-strategy-guide)",
+                "[search engine results pages](https://www.masterclass.com/articles/serp-explained)",
+                "[digital marketing strategies](https://www.masterclass.com/articles/what-is-digital-marketing)"
+            ],
+            "Suggested Sources": [
+                "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+                "https://www.seo-usa.org/",
+                "https://searchengineland.com/guide/what-is-seo",
+                "https://en.wikipedia.org/wiki/Search_engine_optimization"
+            ],
+            "Suggested Slug": "seo",
+            "Complete Brief": "**Title:** SEO Basics: Understanding Search Engine Optimization\n\n**Secondary Keywords:** SEO marketing, SEO techniques, SEO tools, SEO best practices, SEO strategies, SEO for beginners, SEO trends, SEO analytics, SEO content optimization, SEO keyword research \n\n**Search Intent**: The primary motivation for searching 'SEO' is to gain a foundational understanding of search engine optimization, its principles, and how it can be applied to improve website visibility and traffic. Searchers are likely looking for educational resources, guides, or tools that can help them learn about SEO strategies, techniques, and best practices. This could include individuals seeking to enhance their own websites, marketers looking to improve their skills, or business owners wanting to understand how SEO can benefit their online presence.\n\n**Content Funnel Stage**: top-of-funnel\n\n**Recommended Content Type**: what-is\n\n**Top Related Questions from Google**: \n\n- What is SEO and how does it work? \n- What are the key components of SEO? \n- How can I improve my website's SEO? \n- What are common SEO mistakes to avoid? \n- What tools can help with SEO analysis? \n\n\n**Suggested Internal Links**: \n\n- [seo strategy guide](https://www.masterclass.com/articles/seo-strategy-guide) \n- [search engine results pages](https://www.masterclass.com/articles/serp-explained) \n- [digital marketing strategies](https://www.masterclass.com/articles/what-is-digital-marketing) \n\n**Suggested Sources**: \n\n- https://developers.google.com/search/docs/fundamentals/seo-starter-guide \n- https://www.seo-usa.org/ \n- https://searchengineland.com/guide/what-is-seo \n- https://en.wikipedia.org/wiki/Search_engine_optimization \n\n**Suggested Slug**: seo"
+        },
+    }
+}
