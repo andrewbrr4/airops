@@ -32,3 +32,4 @@ langfuse
 huggingface-hub
 ipykernel
 jupyterlab
+tavily-python

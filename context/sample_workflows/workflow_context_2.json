@@ -27,8 +27,7 @@
                 "What are common SEO mistakes to avoid?",
                 "What tools can help with SEO analysis?"
             ]
-        },
-        "execution_id": 21546700
+        }
     },
     "step_11": {
         "output": [
@@ -72,8 +71,8 @@
                     "Masterclass.com"
                 ],
                 "source": "High Voltage SEO"
-            },
-        ],
+            }
+        ]
     },
     "step_6": {
         "output": {
@@ -84,14 +83,12 @@
                 "The Importance of SEO: Why Every Website Needs It",
                 "SEO 101: Key Concepts for Effective Online Marketing"
             ]
-        },
-        "execution_id": 21546700
+        }
     },
     "step_9": {
         "output": {
             "title": "SEO Basics: Understanding Search Engine Optimization"
-        },
-        "execution_id": 21546700
+        }
     },
     "step_12": {
         "output": {
@@ -100,8 +97,7 @@
                 "[search engine results pages](https://www.masterclass.com/articles/serp-explained)",
                 "[digital marketing strategies](https://www.masterclass.com/articles/what-is-digital-marketing)"
             ]
-        },
-        "execution_id": 21546700
+        }
     },
     "step_17": {
         "output": [
@@ -109,16 +105,13 @@
             "https://www.seo-usa.org/",
             "https://searchengineland.com/guide/what-is-seo",
             "https://en.wikipedia.org/wiki/Search_engine_optimization"
-        ],
-        "execution_id": 21546700
+        ]
     },
     "step_2": {
-        "output": "seo",
-        "execution_id": 21546700
+        "output": "seo"
     },
     "step_20": {
-        "output": "**Title:** SEO Basics: Understanding Search Engine Optimization\n\n**Secondary Keywords:** SEO marketing, SEO techniques, SEO tools, SEO best practices, SEO strategies, SEO for beginners, SEO trends, SEO analytics, SEO content optimization, SEO keyword research \n\n**Search Intent**: The primary motivation for searching 'SEO' is to gain a foundational understanding of search engine optimization, its principles, and how it can be applied to improve website visibility and traffic. Searchers are likely looking for educational resources, guides, or tools that can help them learn about SEO strategies, techniques, and best practices. This could include individuals seeking to enhance their own websites, marketers looking to improve their skills, or business owners wanting to understand how SEO can benefit their online presence.\n\n**Content Funnel Stage**: top-of-funnel\n\n**Recommended Content Type**: what-is\n\n**Top Related Questions from Google**: \n\n- What is SEO and how does it work? \n- What are the key components of SEO? \n- How can I improve my website's SEO? \n- What are common SEO mistakes to avoid? \n- What tools can help with SEO analysis? \n\n\n**Suggested Internal Links**: \n\n- [seo strategy guide](https://www.masterclass.com/articles/seo-strategy-guide) \n- [search engine results pages](https://www.masterclass.com/articles/serp-explained) \n- [digital marketing strategies](https://www.masterclass.com/articles/what-is-digital-marketing) \n\n**Suggested Sources**: \n\n- https://developers.google.com/search/docs/fundamentals/seo-starter-guide \n- https://www.seo-usa.org/ \n- https://searchengineland.com/guide/what-is-seo \n- https://en.wikipedia.org/wiki/Search_engine_optimization \n\n**Suggested Slug**: seo",
-        "execution_id": 21546700
+        "output": "**Title:** SEO Basics: Understanding Search Engine Optimization\n\n**Secondary Keywords:** SEO marketing, SEO techniques, SEO tools, SEO best practices, SEO strategies, SEO for beginners, SEO trends, SEO analytics, SEO content optimization, SEO keyword research \n\n**Search Intent**: The primary motivation for searching 'SEO' is to gain a foundational understanding of search engine optimization, its principles, and how it can be applied to improve website visibility and traffic. Searchers are likely looking for educational resources, guides, or tools that can help them learn about SEO strategies, techniques, and best practices. This could include individuals seeking to enhance their own websites, marketers looking to improve their skills, or business owners wanting to understand how SEO can benefit their online presence.\n\n**Content Funnel Stage**: top-of-funnel\n\n**Recommended Content Type**: what-is\n\n**Top Related Questions from Google**: \n\n- What is SEO and how does it work? \n- What are the key components of SEO? \n- How can I improve my website's SEO? \n- What are common SEO mistakes to avoid? \n- What tools can help with SEO analysis? \n\n\n**Suggested Internal Links**: \n\n- [seo strategy guide](https://www.masterclass.com/articles/seo-strategy-guide) \n- [search engine results pages](https://www.masterclass.com/articles/serp-explained) \n- [digital marketing strategies](https://www.masterclass.com/articles/what-is-digital-marketing) \n\n**Suggested Sources**: \n\n- https://developers.google.com/search/docs/fundamentals/seo-starter-guide \n- https://www.seo-usa.org/ \n- https://searchengineland.com/guide/what-is-seo \n- https://en.wikipedia.org/wiki/Search_engine_optimization \n\n**Suggested Slug**: seo"
     },
     "step_10": {
         "output": {
@@ -157,6 +150,6 @@
             ],
             "Suggested Slug": "seo",
             "Complete Brief": "**Title:** SEO Basics: Understanding Search Engine Optimization\n\n**Secondary Keywords:** SEO marketing, SEO techniques, SEO tools, SEO best practices, SEO strategies, SEO for beginners, SEO trends, SEO analytics, SEO content optimization, SEO keyword research \n\n**Search Intent**: The primary motivation for searching 'SEO' is to gain a foundational understanding of search engine optimization, its principles, and how it can be applied to improve website visibility and traffic. Searchers are likely looking for educational resources, guides, or tools that can help them learn about SEO strategies, techniques, and best practices. This could include individuals seeking to enhance their own websites, marketers looking to improve their skills, or business owners wanting to understand how SEO can benefit their online presence.\n\n**Content Funnel Stage**: top-of-funnel\n\n**Recommended Content Type**: what-is\n\n**Top Related Questions from Google**: \n\n- What is SEO and how does it work? \n- What are the key components of SEO? \n- How can I improve my website's SEO? \n- What are common SEO mistakes to avoid? \n- What tools can help with SEO analysis? \n\n\n**Suggested Internal Links**: \n\n- [seo strategy guide](https://www.masterclass.com/articles/seo-strategy-guide) \n- [search engine results pages](https://www.masterclass.com/articles/serp-explained) \n- [digital marketing strategies](https://www.masterclass.com/articles/what-is-digital-marketing) \n\n**Suggested Sources**: \n\n- https://developers.google.com/search/docs/fundamentals/seo-starter-guide \n- https://www.seo-usa.org/ \n- https://searchengineland.com/guide/what-is-seo \n- https://en.wikipedia.org/wiki/Search_engine_optimization \n\n**Suggested Slug**: seo"
-        },
+        }
     }
 }
