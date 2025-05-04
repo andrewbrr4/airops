@@ -16,7 +16,7 @@ class ContentOutputParser(BaseOutputParser):
         return text
 
 
-def make_chain(prompt_template: str, output_model: Any) -> Runnable:
+def make_chain(prompt_template: str, output_model: Any, llm: str = MODEL) -> Runnable:
     """
     Create a simple chain runnable.
     """
@@ -27,11 +27,11 @@ def make_chain(prompt_template: str, output_model: Any) -> Runnable:
         parser = ContentOutputParser()
         partial_variables = {}
     chain_prompt = PromptTemplate.from_template(template=prompt_template, partial_variables=partial_variables)
-    model = ChatOpenAI(model=MODEL, temperature=0)
+    model = ChatOpenAI(model=llm, temperature=0)
     return chain_prompt | model | parser
 
 
-def make_agent(tools: List[BaseTool], prompt_template: str, output_model: Any) -> Runnable:
+def make_agent(tools: List[BaseTool], prompt_template: str, output_model: Any, llm: str = MODEL) -> Runnable:
     """
     Create an agent runnable.
     """
@@ -48,7 +48,7 @@ def make_agent(tools: List[BaseTool], prompt_template: str, output_model: Any) -
             ("placeholder", "{agent_scratchpad}")
         ]
     ).partial(**partial_variables)
-    model = ChatOpenAI(model=MODEL, temperature=0)
+    model = ChatOpenAI(model=llm, temperature=0)
     agent = create_tool_calling_agent(llm=model, tools=tools, prompt=agent_prompt)
     agent_executor = AgentExecutor(agent=agent, tools=tools, max_iterations=10)
     return agent_executor | RunnableLambda(lambda x: x["output"]) | parser

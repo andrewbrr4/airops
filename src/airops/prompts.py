@@ -21,18 +21,22 @@ Integration actions are essentially workflow steps that execute a lightweight wr
 # Your Task
 We are testing an agent whose purpose is to receive a workflow output object and a natural language user request, and create an integration step that satisfies the user's requirements.
 You are going to be generating the test cases to evaluate this agent's performance.
-To that end, given the supplied workflow outputs and integration action, please generate a hypothetical user requests that should trigger the agent to pick and configure that action step.
+To that end, given the supplied workflow outputs and integration action, please generate a hypothetical user request that should trigger the agent to pick and configure that action step.
 Please also include in your response a mock-up of the desired payload for the integration action.
-For the values of the mock-up payload, values should be liquid references to workflow inputs or step outputs.
-If you are unable to populate required values using the available keys from the workflow outputs object, you must either:
-* populate with you best guess of one of a KNOWN set of options.
-* indicate the user must supply this field to you by returning {{user_input}}
-If there is no reasonable way that the integration action can be configured given the supplied workflow outputs, you can indicate this and return nulls for the action and payload fields in your response.
+
+Values for the mocked payload MUST be one of the following:
+* liquid references to workflow inputs or step outputs (e.g. {{step_1.output}} or {{step_1.output.attribute}})
+* values that are explicitly given by the user in the prompt (e.g. "send an email to person@example.com")
+* if a field has finite set of options (e.g. a boolean field must be one of [True, False] or ['']), and the user's prompt makes it clear which one to apply, you can use that value
+* if a required field cannot be populated in one of these ways, you can set the value to {{missing}}, indicating that it must be given by the user.
+
+If there is no reasonable way that the integration action can be configured given the supplied workflow outputs and prompt, you can indicate this and return nulls for the action and payload fields in your response.
 
 {format_instructions}
 
 To learn more information about the integration actions, including what they do, what fields they require and what these fields mean, please use the provided tools.
 These tools will help you understand if an integration action can be configured given the outputs available.
+You MUST use these tools - at a bare minimum the `get_action_details` tool is mandatory - to ensure that your config is properly formatted.
 
 # Inputs
 Here are the outputs as described above:
