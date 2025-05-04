@@ -5,6 +5,7 @@ from langchain_core.output_parsers import PydanticOutputParser
 from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_openai import ChatOpenAI
 from langfuse.decorators import observe, langfuse_context
+from airops.utils import get_available_integration_actions
 from airops import prompts, models
 from airops.tools import get_action_details, tavily_extract, tavily_search
 from pydantic import BaseModel
@@ -58,9 +59,10 @@ def run_integration_action_agent(workflow_context: Dict[str, Any], user_request:
     integration_action_agent = create_integration_action_agent()
     langfuse_handler = langfuse_context.get_current_langchain_handler()
     result = integration_action_agent.invoke({
+        'available_integration_actions': get_available_integration_actions(),
         'workflow_context': workflow_context, 'user_request': user_request
     }, config={'callbacks': [langfuse_handler]})
-    return {**result.model_dump(), 'langfuse_trace': langfuse_handler.trace.id}
+    return {**result.model_dump(), 'langfuse_trace_id': langfuse_handler.trace.id}
 
 
 def create_test_case_agent() -> Runnable:

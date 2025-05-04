@@ -9,10 +9,10 @@ class IntegrationAction(BaseModel):
 
 class AgentOutput(BaseModel):
     exposition: str = Field(..., description="your justification for the selected action and configuration payload")
-    integration_action: IntegrationAction = Field(..., description="""
+    integration_action: Optional[IntegrationAction] = Field(None, description="""
         which integration action is chosen. must be one of the known, pre-supplied options.
     """)
-    action_config: Dict[str, Any] = Field(..., description="""
+    action_config: Optional[Dict[str, Any]] = Field(None, description="""
         the inputs to supply the integration action.
         keys should match the inputs schema for the integration action.
         values should be one of the following:
@@ -27,7 +27,7 @@ class AgentOutput(BaseModel):
 class TestCase(BaseModel):
     action_applicable: bool = Field(..., description="whether the integration action makes sense/can be configured wth the given workflow output")
     user_request: Optional[str] = Field(None, description="the synthetic user request that should trigger the integration action")
-    action_config: Dict[str, Any] = Field(..., description="""
+    action_config: Optional[Dict[str, Any]] = Field(None, description="""
         the inputs to supply the integration action.
         keys should match the inputs schema for the integration action.
         values should be one of the following:

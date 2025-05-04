@@ -1,7 +1,4 @@
-from airops.utils import get_available_integration_actions
-
-
-CREATE_INTEGRATION_ACTION_PROMPT = f"""
+CREATE_INTEGRATION_ACTION_PROMPT = """
 # Instructions
 I am going to supply you with two inputs.
 
@@ -32,7 +29,7 @@ NOTE: if a value exists as part of a workflow input or step output, you MUST pro
 
 Here are the available integration actions you have to chose from:
 
-{get_available_integration_actions()}
+{available_integration_actions}
 
 To learn more information about the integration actions, including what they do, what fields they require and what these fields mean, please use the provided tools.
 Using these tools will be crucial for you to understand how to populate the configuration payload.
@@ -41,18 +38,21 @@ Using these tools will be crucial for you to understand how to populate the conf
 * the tavily_search tool can be used to run a web search for additional information on the 3rd party API docs
 
 Please use these tools liberally to ensure that the integration action payload is properly structured/populated - this is the most crucial thing your output to get right (aside from picking the correct action).
+Wherever possible, avoid making assumptions on how the configure should be structure by only looking at the code being executed - use the tavily search or extract tools to validate what each field means.
 
 In addition to integration action selection and configuration payload, you should also include an exposition, explaining to the user why you chose the action and justifying your configuration payload format/values.
 For the latter justification, please cite your sources used from the tool calls: e.g. "according to the integration action input schema" or "based on the 3rd party API documentation [here](https://link-to-documentation.com)" or ("based on my web search results for platform docs")
+If the user asks for an action to be taken that does not correlate to any of the available integration actions, you should tell them that you are unable to help with their request and offer to prompt them to ask you something else.
+In this case, the integration action and configuration payload values can be left blank.
 
-{{format_instructions}}
+{format_instructions}
 
 # Inputs
 ## Workflow Outputs
-{{workflow_context}}
+{workflow_context}
 
 ## User Request
-{{user_request}}
+{user_request}
 
 # Begin Task
 Select the appropriate integration action to run, use the provided tools to properly structure/populate the configuration payload, and provide your explanation to the user.

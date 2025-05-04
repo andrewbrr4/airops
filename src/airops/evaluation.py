@@ -4,7 +4,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from langfuse.decorators import observe, langfuse_context
 from openai import RateLimitError
 from airops import utils
-from airops.agents import create_test_case_agent
+from airops.agents import create_test_case_agent, run_integration_action_agent
 from typing import Dict, Any, Union, List
 
 
@@ -64,7 +64,8 @@ def create_test_cases(target_fp: str) -> List[Dict[str, Any]]:
 def evaluate_agent():
     test_cases = create_test_cases(TEST_CASES_FP)
     for tc in test_cases:
-        ...
+        result = run_integration_action_agent(tc['context'], tc['user_request'])
+        tc['agent_run_result'] = result
 
 
 if __name__ == '__main__':
