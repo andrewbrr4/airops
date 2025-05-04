@@ -1,3 +1,64 @@
+from airops.utils import get_available_integration_actions
+
+
+CREATE_INTEGRATION_ACTION_PROMPT = f"""
+# Instructions
+I am going to supply you with two inputs.
+
+The first input is a dictionary object representing the outputs of an *AirOps workflow run*.
+*AirOps* is an AI-powered SEO tool that lets users create *workflows*: predefined lists of steps that execute various SEO-related tasks.
+These steps might include, but are not limited to:
+* running an LLM call to generate content
+* running a SERP/google search for a keyword
+* extracting text from a webpage
+* hitting a 3rd party API
+* analyzing keyword ranking/performance etc. etc.
+
+The workflow outputs object I will supply contains the initial inputs to the workflow and the raw outputs of each step.
+Unfortunately, it does not contain the name of the step, how each output was generated, or where it fits into the larger workflow.
+These attributes will have to be inferred using your best reasoning.
+
+The second input will be a request from a user to add a step to the workflow that will interact with some other 3rd party tool (Google Suite, Webflow, etc.).
+Your job is to choose and configure an *integration action* step that satisfies the user's request.
+Integration actions are essentially workflow steps that execute a lightweight wrapper on a 3rd party API.
+Your output will contain the chosen integration details as well as a configuration payload containing the values for the action.
+
+Values for the configuration payload MUST be one of the following:
+* liquid references to workflow inputs or step outputs (e.g. {{step_1.output}} or {{step_1.output.attribute}})
+* values that are explicitly given by the user in the prompt (e.g. "send an email to person@example.com")
+* if a field has finite set of options (e.g. a boolean field must be one of [True, False]), and it is clear which one to apply, you can use that value
+* if a required field cannot be populated in one of these ways, you can set the value to {{value_missing}}, indicating that it must be given by the user.
+NOTE: if a value exists as part of a workflow input or step output, you MUST provide the liquid reference, and NOT the literal value.
+
+Here are the available integration actions you have to chose from:
+
+{get_available_integration_actions()}
+
+To learn more information about the integration actions, including what they do, what fields they require and what these fields mean, please use the provided tools.
+Using these tools will be crucial for you to understand how to populate the configuration payload.
+* get_action_details tool returns JSON object including what steps the integration action runs, relevant code, and input schema. at a minimum, you should always run this tool for whatever action you select
+* the tavily_extract tool can be used to scrape text from a URL. this will come in handy if the values returned by the get_action_details tool include links to 3rd party API documentation - whenever these links are provided, you should use this tool to extract the content. 
+* the tavily_search tool can be used to run a web search for additional information on the 3rd party API docs
+
+Please use these tools liberally to ensure that the integration action payload is properly structured/populated - this is the most crucial thing your output to get right (aside from picking the correct action).
+
+In addition to integration action selection and configuration payload, you should also include an exposition, explaining to the user why you chose the action and justifying your configuration payload format/values.
+For the latter justification, please cite your sources used from the tool calls: e.g. "according to the integration action input schema" or "based on the 3rd party API documentation [here](https://link-to-documentation.com)" or ("based on my web search results for platform docs")
+
+{{format_instructions}}
+
+# Inputs
+## Workflow Outputs
+{{workflow_context}}
+
+## User Request
+{{user_request}}
+
+# Begin Task
+Select the appropriate integration action to run, use the provided tools to properly structure/populate the configuration payload, and provide your explanation to the user.
+"""
+
+
 CREATE_TEST_CASE_PROMPT = """
 # Background Information
 I am going to supply you with TWO (2) INPUTS.
@@ -42,7 +103,7 @@ You MUST use these tools - at a bare minimum the `get_action_details` tool is ma
 # Inputs
 Here are the outputs as described above:
 
-## Workflow Output
+## Workflow Outputs
 {workflow_context}
 
 ## Integration Action

@@ -7,7 +7,8 @@ class IntegrationAction(BaseModel):
     action: str = Field(..., description="the action to take")
 
 
-class IntegrationActionPayload(BaseModel):
+class AgentOutput(BaseModel):
+    exposition: str = Field(..., description="your justification for the selected action and configuration payload")
     integration_action: IntegrationAction = Field(..., description="""
         which integration action is chosen. must be one of the known, pre-supplied options.
     """)

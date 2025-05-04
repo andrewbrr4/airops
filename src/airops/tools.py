@@ -25,16 +25,16 @@ def get_action_details(integration: str, action: str) -> Dict:
 
 
 @tool
-def tavily_search(query: str) -> List[Dict]:
-    """
-    Given a plain text query, runs an internet search
-    """
-    return TAVILY.search(query)['results']
-
-
-@tool
 def tavily_extract(url: str) -> str:
     """
     Given the supplied URL, extracts all text
     """
     return TAVILY.extract(url)['results'][0]['raw_content']
+
+
+@tool
+def tavily_search(query: str) -> List[Dict]:
+    """
+    Given a plain text query, runs an internet search
+    """
+    return TAVILY.search(query)['results']
