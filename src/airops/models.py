@@ -37,3 +37,8 @@ class TestCase(BaseModel):
         * if a required field cannot be populated in one of these ways, use {{value_missing}}
         NOTE: if a value exists as part of a workflow input or step output, you MUST provide the liquid reference, and NOT the literal value.
     """)
+
+
+class TestCaseResultScore(BaseModel):
+    config_accuracy_score: float = Field(..., description="on a scale from 0 to 1, how accurately the action config matches the required formatting/values, based on the integration action details and 3rd party API documentation")
+    exposition_score: float = Field(..., description="on a scale from 0 to 1, how accurately the exposition justifies the action integration choice and config payload structure")
