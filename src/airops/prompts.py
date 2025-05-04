@@ -28,7 +28,7 @@ Values for the mocked payload MUST be one of the following:
 * liquid references to workflow inputs or step outputs (e.g. {{step_1.output}} or {{step_1.output.attribute}})
 * values that are explicitly given by the user in the prompt (e.g. "send an email to person@example.com")
 * if a field has finite set of options (e.g. a boolean field must be one of [True, False] or ['']), and the user's prompt makes it clear which one to apply, you can use that value
-* if a required field cannot be populated in one of these ways, you can set the value to {{missing}}, indicating that it must be given by the user.
+* if a required field cannot be populated in one of these ways, you can set the value to {{value_missing}}, indicating that it must be given by the user.
 
 If there is no reasonable way that the integration action can be configured given the supplied workflow outputs and prompt, you can indicate this and return nulls for the action and payload fields in your response.
 
@@ -50,11 +50,4 @@ Action: {action}
 
 # Begin Task
 Generate the test cases as described in the requirements above.
-
-As a reminder, values for the action config payload MUST BE:
-* liquid references to workflow inputs or step outputs (e.g. {{step_1.output}} or {{step_1.output.attribute}})
-* values that are explicitly given by the user in the prompt (e.g. "send an email to person@example.com")
-* if a field has finite set of options (e.g. a boolean field must be one of [True, False] or ['']), and the user's prompt makes it clear which one to apply, you can use that value
-* if a required field cannot be populated in one of these ways, you can set the value to {{missing}}, indicating that it must be given by the user.
-This formatting is key.
 """

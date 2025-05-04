@@ -14,9 +14,11 @@ class IntegrationActionPayload(BaseModel):
     action_config: Dict[str, Any] = Field(..., description="""
         the inputs to supply the integration action.
         keys should match the inputs schema for the integration action.
-        If you are unable to populate required values using the available keys from the worklow outputs object, you must either:
-        * populate with you best guess of one of a KNOWN set of options.
-        * indicate the user must supply this field to you by returning {{user_input}}
+        values should be one of the following:
+        * liquid references to workflow inputs or step outputs (e.g. {{step_1.output}} or {{step_1.output.attribute}})
+        * values that are explicitly given by the user in the prompt (e.g. "send an email to person@example.com")
+        * if a field has finite set of options (like a boolean), or has a default value, and the user's prompt makes it clear which one to apply, you can chose that value
+        * if a required field cannot be populated in one of these ways, use {{value_missing}}
     """)
 
 
@@ -26,8 +28,9 @@ class TestCase(BaseModel):
     action_config: Dict[str, Any] = Field(..., description="""
         the inputs to supply the integration action.
         keys should match the inputs schema for the integration action.
-        values should be liquid references to workflow inputs or step outputs.
-        If you are unable to populate required values using the available keys from the worklow outputs object, you must either:
-        * populate with you best guess of one of a KNOWN set of options.
-        * indicate the user must supply this field to you by returning {{user_input}}
+        values should be one of the following:
+        * liquid references to workflow inputs or step outputs (e.g. {{step_1.output}} or {{step_1.output.attribute}})
+        * values that are explicitly given by the user in the prompt (e.g. "send an email to person@example.com")
+        * if a field has finite set of options (like a boolean), or has a default value, and the user's prompt makes it clear which one to apply, you can chose that value
+        * if a required field cannot be populated in one of these ways, use {{value_missing}}
     """)
