@@ -77,13 +77,13 @@ def create_test_case_agent() -> Runnable:
     )
 
 
-def create_validate_result_agent() -> Runnable:
+def create_validate_output_agent() -> Runnable:
     """
     Creates the agent that validates test case results (used in evaluation module)
     """
     return make_agent(
         tools = [get_action_details, tavily_search, tavily_extract],
-        prompt_template = prompts.VALIDATE_TEST_CASE_RESULT_PROMPT,
-        output_model = models.TestCaseResultScore,
+        prompt_template = prompts.VALIDATE_OUTPUT_PROMPT,
+        output_model = models.AgentOutputScore,
         llm='gpt-4.1-mini' # we care less about fidelity here and this is much faster
     )

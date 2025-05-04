@@ -8,7 +8,7 @@ from airops import utils
 from airops.agents import (
     run_integration_action_agent,
     create_test_case_agent,
-    create_validate_result_agent
+    create_validate_output_agent
 )
 from typing import Dict, Any, Union, List
 from langfuse import Langfuse
@@ -72,11 +72,11 @@ def create_test_cases(target_fp: str) -> List[Dict[str, Any]]:
 
 
 @observe()
-def run_validate_result_agent(user_request: str, agent_output: Dict[str, Any]) -> Dict[str, float]:
+def run_validate_output_agent(user_request: str, agent_output: Dict[str, Any]) -> Dict[str, Any]:
     """
     Uses an agent to validate that the action config from a test case result is well-structured
     """
-    validation_agent = create_validate_result_agent()
+    validation_agent = create_validate_output_agent()
     langfuse_handler = langfuse_context.get_current_langchain_handler()
     return validation_agent.invoke({
         'user_request': user_request, 'agent_output': agent_output
@@ -110,13 +110,15 @@ def score_test_case_result(test_case: Dict[str, Any]) -> Dict[str, Any]:
     """
     expected = test_case['expected_result']
     agent_result = test_case['agent_run_result']
-    validation_agent_result = run_validate_result_agent(test_case['user_request'], agent_result)
+    validation_agent_result = run_validate_output_agent(test_case['user_request'], agent_result)
     scores = {
         'action_choice_score': int(
             expected['action'] == agent_result['action'] and expected['integration'] == agent_result['integration']),
         'config_completeness_score': calculate_completeness(agent_result['action_config']),
-        'config_accuracy_score': validation_agent_result['config_accuracy_score'],
-        'exposition_score': validation_agent_result['exposition_score'],
+        'config_accuracy_score': validation_agent_result['config_accuracy_score']['value'],
+        'config_accuracy_score_reason': validation_agent_result['config_accuracy_score']['reason'],
+        'exposition_score': validation_agent_result['exposition_score']['value'],
+        'exposition_score_reason': validation_agent_result['exposition_score']['reason'],
     }
     for key, val in scores.items():
         LANGFUSE.score(trace_id=agent_result['langfuse_trace_id'], name=key, value=val)
@@ -133,9 +135,11 @@ def evaluate_agent():
     for tc in tqdm(test_cases):
         tc['agent_run_result'] = run_integration_action_agent(tc['context'], tc['user_request'])
         scored_test_cases.append(score_test_case_result(tc))
+
     test_results = {'scored_test_cases': scored_test_cases}
     for metric in ['action_choice_score', 'config_completeness_score', 'config_accuracy_score', 'exposition_score']:
         test_results[f'avg_{metric}'] = sum([tc[metric] for tc in scored_test_cases]) / len(scored_test_cases)
+
     joblib.dump(
         test_results,
         f'{REPO_ROOT}/eval/results/{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.joblib'

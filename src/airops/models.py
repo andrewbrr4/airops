@@ -39,6 +39,11 @@ class TestCase(BaseModel):
     """)
 
 
-class TestCaseResultScore(BaseModel):
-    config_accuracy_score: float = Field(..., description="on a scale from 0 to 1, how accurately the action config matches the required formatting/values, based on the integration action details and 3rd party API documentation")
-    exposition_score: float = Field(..., description="on a scale from 0 to 1, how accurately the exposition justifies the action integration choice and config payload structure")
+class LLMScore(BaseModel):
+    reason: str = Field(..., description="why you chose the score you selected. keep this brief (<3 sentences)")
+    value: float = Field(..., description="the score you selected from 0 to 1")
+
+
+class AgentOutputScore(BaseModel):
+    config_accuracy_score: LLMScore = Field(..., description="how accurately the action config matches the required formatting/values, based on the integration action details and 3rd party API documentation")
+    exposition_score: LLMScore = Field(..., description="how accurately the exposition justifies the action integration choice and config payload structure")
