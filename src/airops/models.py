@@ -17,8 +17,9 @@ class IntegrationActionPayload(BaseModel):
         values should be one of the following:
         * liquid references to workflow inputs or step outputs (e.g. {{step_1.output}} or {{step_1.output.attribute}})
         * values that are explicitly given by the user in the prompt (e.g. "send an email to person@example.com")
-        * if a field has finite set of options (like a boolean), or has a default value, and the user's prompt makes it clear which one to apply, you can chose that value
+        * if a field has finite set of options (like a boolean), or has a default value, and it is clear which one to apply, you can chose that value
         * if a required field cannot be populated in one of these ways, use {{value_missing}}
+        NOTE: if a value exists as part of a workflow input or step output, you MUST provide the liquid reference, and NOT the literal value.
     """)
 
 
@@ -31,6 +32,7 @@ class TestCase(BaseModel):
         values should be one of the following:
         * liquid references to workflow inputs or step outputs (e.g. {{step_1.output}} or {{step_1.output.attribute}})
         * values that are explicitly given by the user in the prompt (e.g. "send an email to person@example.com")
-        * if a field has finite set of options (like a boolean), or has a default value, and the user's prompt makes it clear which one to apply, you can chose that value
+        * if a field has finite set of options (like a boolean), or has a default value, and it is clear which one to apply, you can chose that value
         * if a required field cannot be populated in one of these ways, use {{value_missing}}
+        NOTE: if a value exists as part of a workflow input or step output, you MUST provide the liquid reference, and NOT the literal value.
     """)

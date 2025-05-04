@@ -27,8 +27,9 @@ Please also include in your response a mock-up of the desired payload for the in
 Values for the mocked payload MUST be one of the following:
 * liquid references to workflow inputs or step outputs (e.g. {{step_1.output}} or {{step_1.output.attribute}})
 * values that are explicitly given by the user in the prompt (e.g. "send an email to person@example.com")
-* if a field has finite set of options (e.g. a boolean field must be one of [True, False] or ['']), and the user's prompt makes it clear which one to apply, you can use that value
+* if a field has finite set of options (e.g. a boolean field must be one of [True, False]), and it is clear which one to apply, you can use that value
 * if a required field cannot be populated in one of these ways, you can set the value to {{value_missing}}, indicating that it must be given by the user.
+NOTE: if a value exists as part of a workflow input or step output, you MUST provide the liquid reference, and NOT the literal value.
 
 If there is no reasonable way that the integration action can be configured given the supplied workflow outputs and prompt, you can indicate this and return nulls for the action and payload fields in your response.
 
