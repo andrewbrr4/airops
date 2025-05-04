@@ -26,4 +26,9 @@ You can call the agent using the `run_agent.ipynb` notebook.
 Just supply your user request and context workflow and call the `run_integration_action_agent` function.
 
 ## Agent Evaluation
-The `evaluation.py` module contains a script that runs the agent over a set of test cases and evaluates its performance using a variety of metrics.
+You can evaluate the agent's performance using the `evaluate_agent.ipynb` notebook.
+When you call the `evaluate_agent` function it will execute the following steps:
+* generate a set of test cases
+* run the agent against each test case
+* score the agent's output for each test case
+

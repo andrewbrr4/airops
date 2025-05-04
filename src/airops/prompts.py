@@ -146,7 +146,7 @@ We are currently testing an agent whose purpose is to receive a workflow output 
 Integration actions are essentially workflow steps that execute a lightweight wrapper on a 3rd party API.
 
 ## Explanation of Inputs
-I am going to supply you with two inputs.
+I am going to supply you with three inputs.
 
 The first input is a dictionary object representing the outputs of an AirOps Workflow Run.
 The workflow outputs object I will supply contains the initial inputs to the workflow and the raw outputs of each step.
@@ -156,7 +156,12 @@ The second input will be a request from a user to add a step to the workflow tha
 The third will be the response from the agent that you are to evaluate.
 
 ## Evaluation Criteria
-We are particularly concerned with how 
+We are particularly concerned with how well the agent structures the action config.
+Firstly, we want to ensure that the action config schema matches the required schema for the chose integration action.
+Secondly, we want to know that the values are supplied according to desired best practices:
+* wherever possible, liquid references to workflow output values are used over static values
+* the values chose are correct for what the user wants
+* if a value is not provided or able to be inferred, the agents indicates as such by providing {{value_missing}} (rather than assuming or hallucinating values)
 
 ## Response Formatting
 {format_instructions}

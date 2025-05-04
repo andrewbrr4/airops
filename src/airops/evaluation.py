@@ -14,7 +14,6 @@ from typing import Dict, Any, Union, List
 from langfuse import Langfuse
 
 
-REPO_ROOT = utils.get_repo_root()
 LANGFUSE = Langfuse()
 
 
@@ -115,8 +114,10 @@ def score_test_case_result(test_case: Dict[str, Any]) -> Dict[str, Any]:
         'action_choice_score': int(
             expected['action'] == agent_result['action'] and expected['integration'] == agent_result['integration']),
         'config_completeness_score': calculate_completeness(agent_result['action_config']),
-        'config_accuracy_score': validation_agent_result['config_accuracy_score']['value'],
-        'config_accuracy_score_reason': validation_agent_result['config_accuracy_score']['reason'],
+        'config_input_schema_score': validation_agent_result['config_input_schema_score']['value'],
+        'config_input_schema_score_reason': validation_agent_result['config_input_schema_score']['reason'],
+        'config_input_values_score': validation_agent_result['config_input_values_score']['value'],
+        'config_input_values_score_reason': validation_agent_result['config_input_values_score']['reason'],
         'exposition_score': validation_agent_result['exposition_score']['value'],
         'exposition_score_reason': validation_agent_result['exposition_score']['reason'],
     }
@@ -130,21 +131,22 @@ def evaluate_agent():
     Creates test cases, runs the agent against each test case and evaluate the results,
         adding scores to the langfuse traces and dumping final results to local file
     """
-    test_cases = create_test_cases(f'{REPO_ROOT}/eval/test_cases.joblib')
+    repo_root = utils.get_repo_root()
+    test_cases = create_test_cases(f'{repo_root}/eval/test_cases.joblib')
     scored_test_cases = []
     for tc in tqdm(test_cases):
         tc['agent_run_result'] = run_integration_action_agent(tc['context'], tc['user_request'])
         scored_test_cases.append(score_test_case_result(tc))
 
     test_results = {'scored_test_cases': scored_test_cases}
-    for metric in ['action_choice_score', 'config_completeness_score', 'config_accuracy_score', 'exposition_score']:
+    for metric in [
+        'action_choice_score', 'config_completeness_score',
+        'config_input_schema_score', 'config_input_values_score', 'exposition_score'
+    ]:
         test_results[f'avg_{metric}'] = sum([tc[metric] for tc in scored_test_cases]) / len(scored_test_cases)
 
     joblib.dump(
         test_results,
-        f'{REPO_ROOT}/eval/results/{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.joblib'
+        f'{repo_root}/eval/results/{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.joblib'
     )
-
-
-if __name__ == '__main__':
-    evaluate_agent()
+    return test_results

@@ -45,5 +45,6 @@ class LLMScore(BaseModel):
 
 
 class AgentOutputScore(BaseModel):
-    config_accuracy_score: LLMScore = Field(..., description="how accurately the action config matches the required formatting/values, based on the integration action details and 3rd party API documentation")
+    config_input_schema_score: LLMScore = Field(..., description="how accurately the action config matches the required input schema, based on the integration action details and 3rd party API documentation")
+    config_input_values_score: LLMScore = Field(..., description="how well the agent performs at using liquid references where possible, choosing correct values, and handling unknown values")
     exposition_score: LLMScore = Field(..., description="how accurately the exposition justifies the action integration choice and config payload structure")
