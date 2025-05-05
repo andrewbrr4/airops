@@ -93,7 +93,7 @@ def calculate_completeness(config: Dict[str, Any]) -> float:
                 total += nested_total
             else:
                 total += 1
-                if value == "{value_missing}":
+                if 'value_missing' in value:
                     count += 1
         return count, total
     count, total = recurse(config)
