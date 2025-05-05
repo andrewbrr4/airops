@@ -41,7 +41,7 @@ def get_sample_workflow_contexts() -> List[Dict[str, Any]]:
     return sample_workflow_contexts
 
 
-def handle_errors(retries=3, sleep_time=60):
+def handle_errors(sleep_time=60):
     def decorator(fn):
         @functools.wraps(fn)
         def wrapper(*args, **kwargs):
@@ -50,11 +50,8 @@ def handle_errors(retries=3, sleep_time=60):
                 try:
                     return fn(*args, **kwargs)
                 except RateLimitError as e:
-                    if retries is not None and attempt >= retries:
-                        raise
                     attempt += 1
                     time.sleep(sleep_time * attempt)
-                    print(f'rate limit exceeded')
                 except Exception as e:
                     print(f"Error: {e}")
                     return None
