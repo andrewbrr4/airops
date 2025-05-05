@@ -10,9 +10,10 @@ from airops import prompts, models
 from airops.tools import get_action_details, tavily_extract, tavily_search
 from pydantic import BaseModel
 from typing import Any, List, Type, Dict
+import os
 
 
-MODEL = 'gpt-4.1-mini'
+MODEL = os.environ.get("MODEL_NAME")
 
 
 def make_agent(
@@ -74,7 +75,6 @@ def create_test_case_agent() -> Runnable:
         tools = [get_action_details, tavily_search, tavily_extract],
         prompt_template = prompts.CREATE_TEST_CASE_PROMPT,
         output_model = models.TestCase,
-        llm=MODEL
     )
 
 
@@ -86,5 +86,4 @@ def create_validate_output_agent() -> Runnable:
         tools = [get_action_details, tavily_search, tavily_extract],
         prompt_template = prompts.VALIDATE_OUTPUT_PROMPT,
         output_model = models.AgentOutputScore,
-        llm=MODEL
     )

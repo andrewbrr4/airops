@@ -34,7 +34,7 @@ def get_sample_workflow_contexts() -> List[Dict[str, Any]]:
     """
     sample_workflow_contexts = []
     repo_root = get_repo_root()
-    for file in os.listdir(f'{repo_root}/context/sample_workflows/'):
+    for file in sorted(os.listdir(f'{repo_root}/context/sample_workflows/')):
         fp = os.path.join(f'{repo_root}/context/sample_workflows/', file)
         with open(fp, 'r') as file:
             sample_workflow_contexts.append(json.load(file))
@@ -53,7 +53,8 @@ def handle_errors(retries=3, sleep_time=60):
                     if retries is not None and attempt >= retries:
                         raise
                     attempt += 1
-                    time.sleep(sleep_time)
+                    time.sleep(sleep_time * attempt)
+                    print(f'rate limit exceeded')
                 except Exception as e:
                     print(f"Error: {e}")
                     return None

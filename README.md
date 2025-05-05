@@ -18,6 +18,7 @@ This repo contains the completed solution to the [AirOps agent take-home assignm
   * Langfuse env vars for tracing:
     * you will need to [create a free account](https://cloud.langfuse.com/auth/sign-up), then contact the owner to be added to the project.
     * set LANGFUSE_HOST, LANGFUSE_PUBLIC and LANGFUSE_SECRET values
+  * set the env variable MODEL_NAME to your chose OpenAI llm model
 
 Now you should be set to run the scripts and notebooks for the solution!
 
@@ -30,5 +31,18 @@ You can evaluate the agent's performance using the `evaluate_agent.ipynb` notebo
 When you call the `evaluate_agent` function it will execute the following steps:
 * generate a set of test cases
 * run the agent against each test case
-* score the agent's output for each test case
+* score the agent's output for each test case using a variety of metrics:
+  * how well the agent's integration action choice matches the test case expectation
+  * what percentage of required values the agent was able to fill out for the action config
+  * a separate LLM-as-a-judge agent's evaluation of the output
 
+These scores will be returned to you from the function and also dumped locally.
+They will also be available with the Langfuse trace.
+
+NOTE: by default, this function will test all possible action integrations across all 5 sample workflow contexts.
+As such, it will take a while, and depending on your OpenAI organization plan, you may run into rate limiting or context window errors.
+It is recommended you use a cheap or fast model (such as gpt-4.1-mini) for this purpose.
+
+## Traceability
+Once you make an account, contact the owner of this repo to be added to the project.
+You will then be able to view traces and evaluation scores in the [web ui](https://us.cloud.langfuse.com/project/cmaaekmlb0047ad0762o0z5t8).

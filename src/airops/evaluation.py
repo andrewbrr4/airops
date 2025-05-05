@@ -54,7 +54,7 @@ def create_test_cases(target_fp: str) -> List[Dict[str, Any]]:
     test_cases = []
     for action in tqdm(utils.get_available_integration_actions(), desc="create test cases"):
         futures = []
-        with ThreadPoolExecutor() as executor:
+        with ThreadPoolExecutor(max_workers=5) as executor:
             for sample in utils.get_sample_workflow_contexts():
                 futures.append(executor.submit(create_test_case, action, sample))
             for f in as_completed(futures):
@@ -117,11 +117,12 @@ def run_and_score_test_case(test_case: Dict[str, Any]) -> Dict[str, Any]:
         ),
         'config_completeness_score': calculate_completeness(agent_result['action_config']),
     }
-    for metric in METRICS:
-        scores[metric] = validation_agent_result[metric]['score']
+    for metric in ['config_input_schema_score', 'config_input_values_score', 'exposition_score']:
+        scores[metric] = validation_agent_result[metric]['value']
         scores[f'{metric}_reason'] = validation_agent_result[metric]['reason']
-    for key, val in scores.items():
-        LANGFUSE.score(trace_id=agent_result['langfuse_trace_id'], name=key, value=val)
+    for metric in METRICS:
+        LANGFUSE.score(trace_id=agent_result['langfuse_trace_id'],
+                       name=metric, value=scores[metric], comment=scores.get(f'{metric}_reason'))
     return {**test_case, 'agent_result': agent_result, **scores}
 
 
@@ -134,7 +135,7 @@ def evaluate_agent():
     test_cases = create_test_cases(f'{repo_root}/eval/test_cases.joblib')
 
     scored_test_cases = []
-    with ThreadPoolExecutor() as executor:
+    with ThreadPoolExecutor(max_workers=5) as executor:
         futures = [executor.submit(run_and_score_test_case, tc) for tc in test_cases]
         for future in tqdm(as_completed(futures), total=len(futures), desc="run and score test cases"):
             result = future.result()
