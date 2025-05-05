@@ -134,7 +134,7 @@ def evaluate_agent():
     test_cases = create_test_cases(f'{repo_root}/eval/test_cases.joblib')
 
     scored_test_cases = []
-    with ThreadPoolExecutor(max_workers=5) as executor:
+    with ThreadPoolExecutor() as executor:
         futures = [executor.submit(run_and_score_test_case, tc) for tc in test_cases]
         for future in tqdm(as_completed(futures), total=len(futures), desc="run and score test cases"):
             result = future.result()
