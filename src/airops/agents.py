@@ -1,7 +1,7 @@
 from langchain_core.runnables import Runnable, RunnableLambda
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.tools import BaseTool
-from langchain_core.output_parsers import PydanticOutputParser
+from langchain.output_parsers import PydanticOutputParser, OutputFixingParser
 from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_openai import ChatOpenAI
 from langfuse.decorators import observe, langfuse_context
@@ -12,7 +12,7 @@ from pydantic import BaseModel
 from typing import Any, List, Type, Dict
 
 
-MODEL = 'gpt-4.1'
+MODEL = 'gpt-4.1-mini'
 
 
 def make_agent(
@@ -22,6 +22,7 @@ def make_agent(
     Create an agent runnable.
     """
     parser = PydanticOutputParser(pydantic_object=output_model)
+    retry_parser = OutputFixingParser.from_llm(parser=parser, llm=ChatOpenAI(model=llm, temperature=0))
     partial_variables = {"format_instructions": parser.get_format_instructions()}
     agent_prompt = ChatPromptTemplate.from_messages(
         [
@@ -33,7 +34,7 @@ def make_agent(
     model = ChatOpenAI(model=llm, temperature=0)
     agent = create_tool_calling_agent(llm=model, tools=tools, prompt=agent_prompt)
     agent_executor = AgentExecutor(agent=agent, tools=tools, max_iterations=10)
-    return agent_executor | RunnableLambda(lambda x: x["output"]) | parser
+    return agent_executor | RunnableLambda(lambda x: x["output"]) | retry_parser
 
 
 def create_integration_action_agent() -> Runnable:
@@ -73,7 +74,7 @@ def create_test_case_agent() -> Runnable:
         tools = [get_action_details, tavily_search, tavily_extract],
         prompt_template = prompts.CREATE_TEST_CASE_PROMPT,
         output_model = models.TestCase,
-        llm='gpt-4.1-mini' # we care less about fidelity here and this is much faster
+        llm=MODEL
     )
 
 
@@ -85,5 +86,5 @@ def create_validate_output_agent() -> Runnable:
         tools = [get_action_details, tavily_search, tavily_extract],
         prompt_template = prompts.VALIDATE_OUTPUT_PROMPT,
         output_model = models.AgentOutputScore,
-        llm='gpt-4.1-mini' # we care less about fidelity here and this is much faster
+        llm=MODEL
     )
