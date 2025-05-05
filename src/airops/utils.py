@@ -53,7 +53,6 @@ def handle_errors(retries=3, sleep_time=60):
                     if retries is not None and attempt >= retries:
                         raise
                     attempt += 1
-                    print(f"Retryable error: {e}. Retrying in {sleep_time} seconds... (Attempt {attempt})")
                     time.sleep(sleep_time)
                 except Exception as e:
                     print(f"Error: {e}")
