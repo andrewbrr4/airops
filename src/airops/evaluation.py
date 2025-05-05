@@ -19,7 +19,7 @@ METRICS = ['action_choice_score', 'config_completeness_score',
 
 
 @observe()
-@utils.handle_errors(3, 60)
+@utils.handle_errors(60)
 def create_test_case(
         integration_action: Dict[str, str], workflow_context: Dict[str, Any]
 ) -> Union[Dict[str, Any], None]:
@@ -101,7 +101,7 @@ def calculate_completeness(config: Dict[str, Any]) -> float:
     return 1 - pct_missing
 
 
-@utils.handle_errors(3, 60)
+@utils.handle_errors(60)
 def run_and_score_test_case(test_case: Dict[str, Any]) -> Dict[str, Any]:
     """
     Evaluates test case results using various metrics
